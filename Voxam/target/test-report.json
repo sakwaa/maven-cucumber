@@ -1,0 +1,109 @@
+[
+  {
+    "id": "parsing-user-input",
+    "description": "",
+    "name": "Parsing User Input",
+    "keyword": "Ability",
+    "line": 1,
+    "elements": [
+      {
+        "description": "",
+        "name": "",
+        "keyword": "Background",
+        "line": 3,
+        "steps": [
+          {
+            "result": {
+              "duration": 107828000,
+              "status": "passed"
+            },
+            "name": "the game parser",
+            "keyword": "Given ",
+            "line": 4,
+            "match": {
+              "location": "ParserSteps.the_game_parser()"
+            }
+          }
+        ],
+        "type": "background"
+      },
+      {
+        "id": "parsing-user-input;parse-a-valid-single-word-command",
+        "description": "",
+        "name": "Parse a valid single word command",
+        "keyword": "Scenario",
+        "line": 6,
+        "steps": [
+          {
+            "result": {
+              "duration": 1767000,
+              "status": "passed"
+            },
+            "name": "the command \"inventory\" is parsed",
+            "keyword": "When ",
+            "line": 7,
+            "match": {
+              "arguments": [
+                {
+                  "val": "inventory",
+                  "offset": 13
+                }
+              ],
+              "location": "ParserSteps.the_command_is_parsed(String)"
+            }
+          },
+          {
+            "result": {
+              "duration": 67000,
+              "status": "passed"
+            },
+            "name": "the verb is \"inventory\"",
+            "keyword": "Then ",
+            "line": 8,
+            "match": {
+              "arguments": [
+                {
+                  "val": "inventory",
+                  "offset": 13
+                }
+              ],
+              "location": "ParserSteps.the_verb_is(String)"
+            }
+          },
+          {
+            "result": {
+              "duration": 43000,
+              "status": "passed"
+            },
+            "name": "there is no direct object",
+            "keyword": "And ",
+            "line": 9,
+            "match": {
+              "location": "ParserSteps.there_is_no_direct_object()"
+            }
+          },
+          {
+            "result": {
+              "duration": 93000,
+              "status": "passed"
+            },
+            "name": "the parser response is \"Success\"",
+            "keyword": "And ",
+            "line": 10,
+            "match": {
+              "arguments": [
+                {
+                  "val": "Success",
+                  "offset": 24
+                }
+              ],
+              "location": "ParserSteps.the_parser_response_is(String)"
+            }
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "uri": "nostalgic/textadv/voxam/parser.feature"
+  }
+]
